@@ -3,5 +3,11 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    link(rel='import', href='/bower_components/paper-input/paper-input.html')
+    link(rel='import', href='/bower_components/paper-button/paper-button.html')
+    link(rel='import', href='/bower_components/paper-toolbar/paper-toolbar.html')
+    link(rel='import', href='/bower_components/paper-card/paper-card.html')
+    link(rel='import', href='/bower_components/paper-listbox/paper-listbox.html')
+    link(rel='import', href='/bower_components/paper-item/paper-item.html')
+  body(style="padding: 0; margin:0;")
     block content

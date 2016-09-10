@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    paper-toolbar(style="color:white")
+        span Enter your Portfolio
+
+    form#formPortfolio(name="addPortfolio",method="post",action="/addStock", style="display:flex; flex-direction: row;")
+        paper-input#inputCompanyName(type="text", placeholder="Company", name="companyName", style="width:30vw; margin: 8vw 5vw 0 5vw;")
+        paper-input#inputCompanyPercent(type="text", placeholder="Quantity", name="quantity", style="width:10vw; margin: 8vw 5vw 0 0;")
+        button#btnSubmit(type="Add", style="margin: 9vw 0 0 0" raised) submit
+    ul
+        each p, i in portfolio
+            div#formPortfolio(style="display:flex; flex-direction: row;")
+                span#inputCompanyName(style="width:30vw; margin: 2vw 5vw 0 5vw;")= p.companyName
+                span#inputCompanyPercent(style="width:10vw; margin: 2vw 5vw 0 0;")= p.quantity
+    paper-toolbar(style="position: absolute; bottom: 0; width: 100vw")
+        form(method="get",action="/insights", style="display:flex; flex-direction: row;")
+            button(style="margin-left:90vw; background:white;color:blue;" raised) Finish
+

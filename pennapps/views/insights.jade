@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    paper-toolbar
+        span Portfolio Insights
+    h1= title
+    paper-listbox(style="width:40vw; margin-left: 5vw")
+        paper-item
+            span
+                b(style='width:5vw; margin: 0 2vw 0 0') Company
+            span
+                b Quantity
+        each p in portfolio
+            paper-item
+                span(style='width:5vw; margin: 0 2vw 0 0')=  p.companyName
+                span= p.quantity
+
+    paper-toolbar(style="position: absolute; bottom: 0; width: 100vw")
+        form(method="get",action="/insights", style="display:flex; flex-direction: row;")
+            button(style="margin-left:90vw; background:white;color:blue;" raised) Edit Portfolio

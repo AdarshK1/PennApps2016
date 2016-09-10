@@ -4,41 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-// New Code
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var monk = require('monk');
-var db = monk('localhost:27017/pennapps');
+var db = monk('localhost:27017/test');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
-var Schema = mongoose.Schema;
-
-var symbolSchema = new Schema({
-    ticker: String,
-    name: String
-});
-
-var Symbol = mongoose.model('Symbol', symbolSchema)
-
-var portfolioSchema = new Schema({
-    companies = [String]
-});
-
-var Portfolio = mongoose.model('Portfolio', portfolioSchema)
-
-var companySchema = new Schema({
-    name: String,
-    ticker: String,
-    price: Number,
-    articles: [String],
-//    Add more aladdin properties.
-
-});
-
-var Company = mongoose.model('Company', companySchema)
 
 var app = express();
 
