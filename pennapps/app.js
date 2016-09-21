@@ -7,7 +7,11 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var monk = require('monk');
-var db = monk('localhost:27017/test');
+var db = require('./models/db');
+var symbol = require('./models/symbol.js');
+var portfolio = require('./models/portfolio.js');
+var article = require('./models/article.js');
+var company = require('./models/company.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
